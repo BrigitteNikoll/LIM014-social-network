@@ -26,8 +26,5 @@ export const getPost = (callback) => {
     console.log(post);
     callback(post);
   });
-  /*  firebase.firestore().collection('posts').get().then(e=>{
-    e (doc => {
-      firebase.firestore().collection('posts').doc(doc.id).delete()
-    })}); */
+  
 };
