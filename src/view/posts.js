@@ -4,6 +4,7 @@
 /* eslint-disable no-undef */
 import {
   getPost, deletePost, getPostById, updatePost, likingPost,
+// eslint-disable-next-line import/named
 } from '../lib/user/postsService.js';
 import { renderModalPost } from './ModalPost.js';
 /* import { renderComment } from './comment.js'; */
@@ -108,6 +109,9 @@ export const renderPostUser = (element) => {
               updatePost(idPost, {
                 posting: inputPost.value,
               });
+              console.log(idPost, {
+                posting: inputPost.value,
+              });
               modal.style.display = 'none';
             });
             modal.appendChild(modalContent);
@@ -115,7 +119,7 @@ export const renderPostUser = (element) => {
             modal.style.display = 'block';
           });
       }));
-      const valueLikes = postUnique.querySelector('.valueLikes');
+      // const valueLikes = postUnique.querySelector('.valueLikes');
       //   const blueLike = postUser.querySelector('#buttonLikePost');
       // console.log(valueLikes);
       // console.log(valueLikes.textContent);

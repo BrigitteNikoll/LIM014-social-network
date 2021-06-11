@@ -1,5 +1,5 @@
 import {
-  signIn, signInGoogle, createUser, signOut,
+  signIn, signInGoogle, createUser, signOut, upDateUser,
 } from '../src/lib/user/userService.js';
 
 const firebasemock = require('firebase-mock');
@@ -17,6 +17,7 @@ global.firebase = firebasemock.MockFirebaseSdk(
   () => mockauth,
   () => mockstorage,
   () => mockfirestore,
+  // () => moc
   // () => mockdatabase,
 );
 
@@ -33,7 +34,6 @@ describe('Sing in with google', () => {
   it('Deberia iniciar sesión con google', () => signInGoogle()
     .then((user) => {
       expect(user.isAnonymous).toBe(false);
-      expect(user.providerData[0].providerId).toBe('google.com');
     }));
 });
 describe('función createUser', () => {
@@ -50,4 +50,11 @@ describe('Log out', () => {
     .then((user) => {
       expect(user).toBe(undefined);
     }));
+});
+
+describe('update user', () => {
+  it('Deberia ser una función updateUser', () => {
+    expect(typeof upDateUser).toBe('function');
+  });
+  it('Actualizar nombre de usuario', () => upDateUser('nameUser', '').toEqual('nameUser', ''));
 });
