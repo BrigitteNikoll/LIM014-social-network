@@ -4,6 +4,7 @@
 // ****** SIGN UP ********
 export const createUser = (email, password) => {
   const user = firebase.auth();
+  console.log(firebase.auth());
   return user.createUserWithEmailAndPassword(email, password);
 };
 
