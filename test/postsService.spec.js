@@ -1,6 +1,6 @@
 import MockFirebase from 'mock-cloud-firestore';
 import {
-  createPost, getPost, deletePost, getPostById, updatePost, likingPost,
+  getPost, deletePost, getPostById, updatePost, likingPost,
 } from '../src/lib/user/postsService.js';
 
 // Collection Firebase mock
@@ -29,7 +29,6 @@ describe('add new post', () => {
       (data) => {
         const result = data.find((post) => post.postUs === 'hola');
         expect(result.postUs).toBe('hola');
-
         done();
       },
     )));

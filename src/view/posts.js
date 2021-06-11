@@ -60,8 +60,8 @@ export const renderPostUser = (element) => {
 
       // console.log(user.displayName, doc.userSign);
       if (user.displayName === doc.userSign) {
-        const html = ` <img src="img/editButton.PNG" width="20" height="20" class="btnPostEdit" data-id=${doc.idPost}>
-          <img src="img/deleteButton.PNG" width="20" height="20" class="btnPostDelete" data-id=${doc.idPost}>`;
+        const html = ` <img src="img/editButton.png" width="20" height="20" class="btnPostEdit" data-id=${doc.idPost}>
+          <img src="img/deleteButton.png" width="20" height="20" class="btnPostDelete" data-id=${doc.idPost}>`;
         userPost.innerHTML = html;
       } else {
         // console.log('suerte');
